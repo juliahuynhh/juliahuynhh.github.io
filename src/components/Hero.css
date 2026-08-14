@@ -1,0 +1,15 @@
+.hero {
+  margin-bottom: 48px;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  color: var(--color-brown);
+  letter-spacing: -0.02em;
+}
+
+.dark .hero-title {
+  color: var(--color-text);
+}

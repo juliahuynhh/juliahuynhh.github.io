@@ -1,0 +1,79 @@
+.project-detail-page {
+  padding-top: 32px;
+}
+
+.notebook-paper {
+  position: relative;
+  width: 100%;
+  min-height: 620px;
+}
+
+.notebook-paper-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+.notebook-content {
+  position: relative;
+  z-index: 1;
+  min-height: 620px;
+  padding: 48px 56px 64px 72px;
+}
+
+.notebook-title {
+  margin: 0 0 32px;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.notebook-field {
+  margin: 0 0 16px;
+  font-size: 16px;
+  color: var(--color-brown);
+}
+
+.dark .notebook-field {
+  color: var(--color-text);
+}
+
+.notebook-field-label {
+  font-weight: 500;
+}
+
+.notebook-body {
+  margin: 32px 0 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-brown);
+}
+
+.dark .notebook-body {
+  color: var(--color-text);
+}
+
+.notebook-back-link {
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 14px;
+  color: var(--color-green);
+}
+
+.notebook-back-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .notebook-paper {
+    min-height: 520px;
+  }
+
+  .notebook-content {
+    min-height: 520px;
+    padding: 36px 32px 48px 56px;
+  }
+}

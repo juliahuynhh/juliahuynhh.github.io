@@ -1,0 +1,57 @@
+.home-page {
+  padding-top: 48px;
+  padding-bottom: 32px;
+}
+
+.home-page .hero {
+  margin-bottom: 56px;
+}
+
+.home-page .hero-title {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  margin: 0;
+}
+
+.home-page .portfolio-info {
+  margin-bottom: 0;
+  gap: 32px;
+}
+
+.home-page .photo-frame-landing {
+  margin-top: -96px;
+  width: min(300px, 100%);
+}
+
+.home-page .projects-section {
+  margin-top: 32px;
+  width: 100%;
+}
+
+.home-page .projects-section .section-label {
+  margin-bottom: 8px;
+}
+
+.home-page .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: none;
+}
+
+.home-page .project-folder-image {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  .home-page {
+    min-height: calc(100svh - var(--navbar-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,31 @@
+.project-sticky-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  background-color: #d9d9d9;
+  border: 1px solid #b8b8b8;
+  transition: transform 0.2s, opacity 0.2s;
+  text-decoration: none;
+}
+
+.dark .project-sticky-note {
+  background-color: #3a3a3a;
+  border-color: #555;
+}
+
+.project-sticky-note:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+.project-sticky-note-label {
+  font-size: 14px;
+  color: var(--color-brown);
+  text-align: center;
+  padding: 12px;
+}
+
+.dark .project-sticky-note-label {
+  color: var(--color-text);
+}
