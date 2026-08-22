@@ -9,13 +9,21 @@ export type Project = {
 export type ProjectCategory = {
   id: string
   label: string
+  image: string
   projects: Project[]
+}
+
+const folderImages = {
+  left: '/icons/folder-left.png',
+  center: '/icons/folder-center.png',
+  right: '/icons/folder-right.png',
 }
 
 export const projectCategories: ProjectCategory[] = [
   {
     id: 'quantum',
-    label: 'Quantum',
+    label: 'quantum',
+    image: folderImages.left,
     projects: [
       {
         slug: 'quantum-simulator',
@@ -35,7 +43,8 @@ export const projectCategories: ProjectCategory[] = [
   },
   {
     id: 'physics',
-    label: 'Physics',
+    label: 'physics',
+    image: folderImages.center,
     projects: [
       {
         slug: 'lab-data-analysis',
@@ -55,7 +64,8 @@ export const projectCategories: ProjectCategory[] = [
   },
   {
     id: 'computer-science',
-    label: 'Computer Science',
+    label: 'computer science',
+    image: folderImages.right,
     projects: [
       {
         slug: 'portfolio-website',
@@ -75,7 +85,8 @@ export const projectCategories: ProjectCategory[] = [
   },
   {
     id: 'misc',
-    label: 'MISC',
+    label: 'misc',
+    image: folderImages.left,
     projects: [
       {
         slug: 'creative-writing',
@@ -103,5 +114,3 @@ export function getProject(categoryId: string, projectSlug: string) {
   const category = getCategoryById(categoryId)
   return category?.projects.find((project) => project.slug === projectSlug)
 }
-
-export const defaultCategoryId = projectCategories[0].id

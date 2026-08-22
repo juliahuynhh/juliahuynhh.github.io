@@ -32,6 +32,7 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   font-family: var(--font-mono);
   font-size: 16px;
@@ -42,8 +43,60 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--color-pink) 48%, transparent) 0%,
+    color-mix(in srgb, var(--color-pink) 20%, transparent) 32%,
+    color-mix(in srgb, var(--color-pink) 0%, transparent) 78%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 130%;
+  background-position: center 100%;
+  animation: pink-wash 16s ease-in-out infinite;
+}
+
+.dark body::before {
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--color-pink) 36%, transparent) 0%,
+    color-mix(in srgb, var(--color-pink) 14%, transparent) 34%,
+    color-mix(in srgb, var(--color-pink) 0%, transparent) 78%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 130%;
+  background-position: center 100%;
+}
+
 #root {
+  position: relative;
+  z-index: 1;
   min-height: 100svh;
+}
+
+@keyframes pink-wash {
+  0%,
+  100% {
+    background-position: center 100%;
+    opacity: 0.75;
+  }
+
+  50% {
+    background-position: center 70%;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+    opacity: 0.9;
+  }
 }
 
 a {

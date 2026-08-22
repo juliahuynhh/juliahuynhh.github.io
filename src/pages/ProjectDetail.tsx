@@ -17,31 +17,22 @@ export default function ProjectDetail() {
 
   return (
     <div className="page-container project-detail-page">
-      <article className="notebook-paper">
-        <img
-          src="/icons/paper.png"
-          alt=""
-          className="notebook-paper-bg"
-          aria-hidden="true"
-        />
+      <article className="project-detail">
+        <h1 className="project-detail-title">|{project.title.toLowerCase()}&gt;</h1>
 
-        <div className="notebook-content">
-          <h1 className="notebook-title">|{project.title.toLowerCase()}&gt;</h1>
+        <p className="project-detail-field">
+          <span className="project-detail-field-label">date:</span> {project.date}
+        </p>
 
-          <p className="notebook-field">
-            <span className="notebook-field-label">date:</span> {project.date}
-          </p>
+        <p className="project-detail-field">
+          <span className="project-detail-field-label">summary:</span> {project.summary}
+        </p>
 
-          <p className="notebook-field">
-            <span className="notebook-field-label">summary:</span> {project.summary}
-          </p>
+        <p className="project-detail-body">{project.body}</p>
 
-          <p className="notebook-body">{project.body}</p>
-
-          <Link to={`/projects/${categoryId}`} className="notebook-back-link">
-            ← Back to {categoryId.replace(/-/g, ' ')} projects
-          </Link>
-        </div>
+        <Link to={`/projects/${categoryId}`} className="project-detail-back-link">
+          ← Back to {categoryId.replace(/-/g, ' ')} projects
+        </Link>
       </article>
     </div>
   )

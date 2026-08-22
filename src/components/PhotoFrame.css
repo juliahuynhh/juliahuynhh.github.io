@@ -27,6 +27,6 @@
 .photo-placeholder {
   position: absolute;
   inset: 14% 14% 12%;
-  background-color: var(--color-bg);
+  background: transparent;
   z-index: 0;
 }

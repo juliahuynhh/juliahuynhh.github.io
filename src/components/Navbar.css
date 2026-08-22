@@ -40,7 +40,8 @@
   height: 52px;
 }
 
-.navbar-icon-sun {
+.navbar-icon-sun,
+.navbar-icon-moon {
   height: 48px;
 }
 
@@ -77,7 +78,8 @@
     height: 40px;
   }
 
-  .navbar-icon-sun {
+  .navbar-icon-sun,
+  .navbar-icon-moon {
     height: 36px;
   }
 }

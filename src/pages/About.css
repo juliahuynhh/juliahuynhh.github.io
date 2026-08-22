@@ -1,6 +1,6 @@
 .about-layout {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) 320px;
   column-gap: 48px;
   align-items: start;
 }
@@ -43,6 +43,7 @@
 
 .about-photo .photo-frame-about {
   margin-top: 0;
+  width: 100%;
 }
 
 @media (max-width: 768px) {

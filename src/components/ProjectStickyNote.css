@@ -1,17 +1,10 @@
 .project-sticky-note {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  display: block;
   aspect-ratio: 1;
-  background-color: #d9d9d9;
-  border: 1px solid #b8b8b8;
+  background: transparent;
   transition: transform 0.2s, opacity 0.2s;
   text-decoration: none;
-}
-
-.dark .project-sticky-note {
-  background-color: #3a3a3a;
-  border-color: #555;
 }
 
 .project-sticky-note:hover {
@@ -19,11 +12,26 @@
   opacity: 0.9;
 }
 
+.project-sticky-note-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
 .project-sticky-note-label {
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  transform: translate(-50%, -50%);
+  width: 64%;
   font-size: 14px;
+  line-height: 1.3;
   color: var(--color-brown);
   text-align: center;
-  padding: 12px;
+  padding: 8px;
 }
 
 .dark .project-sticky-note-label {

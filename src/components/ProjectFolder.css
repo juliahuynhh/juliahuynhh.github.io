@@ -1,0 +1,33 @@
+.project-folder {
+  position: relative;
+  display: block;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.project-folder:hover {
+  transform: translateY(-4px);
+  opacity: 0.85;
+}
+
+.project-folder-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-folder-label {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  font-size: clamp(14px, 1.6vw, 20px);
+  line-height: 1.2;
+  text-align: center;
+  color: var(--color-brown);
+  pointer-events: none;
+}
+
+.dark .project-folder-label {
+  color: var(--color-brown);
+}

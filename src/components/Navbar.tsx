@@ -16,8 +16,9 @@ function isNavLinkActive(pathname: string, path: string) {
 }
 
 export default function Navbar() {
-  const { toggleTheme } = useTheme()
+  const { theme, toggleTheme } = useTheme()
   const location = useLocation()
+  const isDark = theme === 'dark'
 
   return (
     <header className="navbar">
@@ -42,9 +43,13 @@ export default function Navbar() {
           type="button"
           className="navbar-theme-toggle"
           onClick={toggleTheme}
-          aria-label="Toggle dark mode"
+          aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
         >
-          <img src="/icons/day-icon.png" alt="" className="navbar-icon navbar-icon-sun" />
+          <img
+            src={isDark ? '/icons/night-icon.png' : '/icons/day-icon.png'}
+            alt=""
+            className={`navbar-icon ${isDark ? 'navbar-icon-moon' : 'navbar-icon-sun'}`}
+          />
         </button>
       </div>
     </header>

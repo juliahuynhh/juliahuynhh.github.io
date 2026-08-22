@@ -8,22 +8,6 @@
   gap: 20px;
 }
 
-.project-folder {
-  display: block;
-  transition: transform 0.2s, opacity 0.2s;
-}
-
-.project-folder:hover {
-  transform: translateY(-4px);
-  opacity: 0.85;
-}
-
-.project-folder-image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
