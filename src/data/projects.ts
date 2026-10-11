@@ -15,11 +15,6 @@ export type ProjectCategory = {
   projects: Project[]
 }
 
-const longSummary =
-  'Short summary in progress'
-
-const shortSummary =
-  'Short summary in progress'
 
 const projectBlurb =
   '[project description in progress]'
