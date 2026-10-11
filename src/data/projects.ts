@@ -1,8 +1,10 @@
 export type Project = {
   slug: string
+  name: string
   title: string
   date: string
   summary: string
+  blurb: string
   body: string
 }
 
@@ -13,6 +15,17 @@ export type ProjectCategory = {
   projects: Project[]
 }
 
+const longSummary =
+  'short summary of the project in 1/2 lines. bflegosgvna ifhosifnsa g fisoffdslfnsdnjnosdfnidsifnfoisfnodfniddsfninofifuonfinfidfnsofnadfnonminsdfnsdfndifdfnfdndinidi fnsdifnosbdsuafsfnbsbdsuibfeh'
+
+const shortSummary =
+  'short summary of the project in 1/2 lines. bflegosgvna ifhosifnsa g fisoffdslfnsdnjnosdfnidsifnfoisfnodfniddsfninofifuonfinfidfnsofnad'
+
+const projectBlurb =
+  '[insert project description insert project description insert project description]'
+
+const projectBody = 'insert project description '.repeat(42).trim()
+
 const folderImages = {
   left: '/icons/folder-left.png',
   center: '/icons/folder-center.png',
@@ -22,87 +35,65 @@ const folderImages = {
 export const projectCategories: ProjectCategory[] = [
   {
     id: 'quantum',
-    label: 'quantum',
+    label: 'Quantum Computing',
     image: folderImages.left,
     projects: [
       {
-        slug: 'quantum-simulator',
-        title: 'Quantum Simulator',
-        date: 'Spring 2025',
-        summary: 'A basic quantum circuit simulator built for coursework.',
-        body: 'blahhhhhh blahhhhhhhhhhhh with images blahhhhhhhhhh',
+        slug: 'qbasic',
+        name: 'QBasic',
+        title: 'QBasic - a simple quantum programming language',
+        date: '',
+        summary: longSummary,
+        blurb: projectBlurb,
+        body: projectBody,
       },
       {
-        slug: 'qubit-visualizer',
-        title: 'Qubit Visualizer',
-        date: 'Fall 2024',
-        summary: 'Visualizing qubit states on the Bloch sphere.',
-        body: 'blahhhhhh blahhhhhhhhhhhh with images blahhhhhhhhhh',
+        slug: 'quantum-random-walk',
+        name: 'Quantum Random Walk',
+        title: 'Quantum Random Walk Graph Algorithm',
+        date: '',
+        summary: shortSummary,
+        blurb: projectBlurb,
+        body: projectBody,
+      },
+      {
+        slug: 'q-volution',
+        name: 'Q-Volution',
+        title: 'Q-Volution Quantum Harmonic Oscillator Algorithm (5th Place Honorable Mention)',
+        date: '',
+        summary: longSummary,
+        blurb: projectBlurb,
+        body: projectBody,
+      },
+      {
+        slug: 'qaoa-maxcut',
+        name: 'QAOA MaxCut',
+        title:
+          'Quantum Approximation Optimization Algorithm for Solving Weighted & Unweighted MaxCut',
+        date: '',
+        summary: shortSummary,
+        blurb: projectBlurb,
+        body: projectBody,
       },
     ],
   },
   {
     id: 'physics',
-    label: 'physics',
+    label: 'Physics',
     image: folderImages.center,
-    projects: [
-      {
-        slug: 'lab-data-analysis',
-        title: 'Lab Data Analysis',
-        date: 'Spring 2025',
-        summary: 'Automating analysis for physics lab experiments.',
-        body: 'blahhhhhh blahhhhhhhhhhhh with images blahhhhhhhhhh',
-      },
-      {
-        slug: 'mechanics-simulation',
-        title: 'Mechanics Simulation',
-        date: 'Fall 2024',
-        summary: 'Simulating classical mechanics systems.',
-        body: 'blahhhhhh blahhhhhhhhhhhh with images blahhhhhhhhhh',
-      },
-    ],
+    projects: [],
   },
   {
     id: 'computer-science',
-    label: 'computer science',
+    label: 'Computer Science',
     image: folderImages.right,
-    projects: [
-      {
-        slug: 'portfolio-website',
-        title: 'Portfolio Website',
-        date: '2025',
-        summary: 'This personal portfolio built with React and TypeScript.',
-        body: 'blahhhhhh blahhhhhhhhhhhh with images blahhhhhhhhhh',
-      },
-      {
-        slug: 'data-structures-project',
-        title: 'Data Structures Project',
-        date: 'Fall 2024',
-        summary: 'Course project implementing core data structures.',
-        body: 'blahhhhhh blahhhhhhhhhhhh with images blahhhhhhhhhh',
-      },
-    ],
+    projects: [],
   },
   {
     id: 'misc',
-    label: 'misc',
+    label: 'Misc.',
     image: folderImages.left,
-    projects: [
-      {
-        slug: 'creative-writing',
-        title: 'Creative Writing',
-        date: '2024',
-        summary: 'A collection of personal writing samples.',
-        body: 'blahhhhhh blahhhhhhhhhhhh with images blahhhhhhhhhh',
-      },
-      {
-        slug: 'misc-project-two',
-        title: 'Misc Project Two',
-        date: '2023',
-        summary: 'Placeholder for a miscellaneous project.',
-        body: 'blahhhhhh blahhhhhhhhhhhh with images blahhhhhhhhhh',
-      },
-    ],
+    projects: [],
   },
 ]
 

@@ -3,12 +3,15 @@ import { useTheme } from '../context/ThemeContext'
 import './Navbar.css'
 
 const navLinks = [
-  { label: 'About', path: '/about' },
+  { label: 'About me', path: '/' },
   { label: 'Projects', path: '/projects' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Contact me', path: '/contact' },
 ]
 
 function isNavLinkActive(pathname: string, path: string) {
+  if (path === '/') {
+    return pathname === '/'
+  }
   if (path === '/projects') {
     return pathname === '/projects' || pathname.startsWith('/projects/')
   }
@@ -23,8 +26,24 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar-inner">
-        <Link to="/" className="navbar-home" aria-label="Home">
-          <img src="/icons/clover-nav.png" alt="" className="navbar-icon navbar-icon-clover" />
+        <Link
+          to="/"
+          className="navbar-home"
+          aria-label="Home"
+          onMouseDown={(event) => event.preventDefault()}
+        >
+          <span className="navbar-bracket" aria-hidden="true">
+            |
+          </span>
+          <img
+            src={isDark ? '/icons/clover-nav-dark.png' : '/icons/clover-nav.png'}
+            alt=""
+            draggable={false}
+            className="navbar-icon navbar-icon-clover"
+          />
+          <span className="navbar-bracket" aria-hidden="true">
+            &gt;
+          </span>
         </Link>
 
         <nav className="navbar-links" aria-label="Main navigation">
@@ -33,6 +52,7 @@ export default function Navbar() {
               key={path}
               to={path}
               className={`navbar-link${isNavLinkActive(location.pathname, path) ? ' active' : ''}`}
+              onMouseDown={(event) => event.preventDefault()}
             >
               {label}
             </Link>
@@ -45,11 +65,17 @@ export default function Navbar() {
           onClick={toggleTheme}
           aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
         >
+          <span className="navbar-bracket" aria-hidden="true">
+            &lt;
+          </span>
           <img
             src={isDark ? '/icons/night-icon.png' : '/icons/day-icon.png'}
             alt=""
             className={`navbar-icon ${isDark ? 'navbar-icon-moon' : 'navbar-icon-sun'}`}
           />
+          <span className="navbar-bracket" aria-hidden="true">
+            |
+          </span>
         </button>
       </div>
     </header>

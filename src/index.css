@@ -1,24 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
 
 :root {
-  --color-brown: #633e27;
-  --color-green: #99ac95;
+  --color-brown: #423730;
+  --color-blue: #5a6077;
+  --color-green: #5a6077;
   --color-pink: #ebc5c5;
   --color-bg: #ffffff;
-  --color-text: #633e27;
-  --color-text-muted: #99ac95;
-  --color-border: #633e27;
-  --font-mono: 'JetBrains Mono', monospace;
-  --navbar-height: 96px;
+  --color-text: #423730;
+  --color-text-muted: #5a6077;
+  --color-border: #423730;
+  --font-mono: 'Roboto Mono', monospace;
+  --navbar-offset: 48px;
+  --navbar-height: 88px;
   --page-padding-x: 48px;
-  --page-max-width: 1200px;
+  --page-max-width: 1120px;
 }
 
 .dark {
-  --color-bg: #1a1a1a;
-  --color-text: #f5f5f5;
-  --color-text-muted: #99ac95;
-  --color-border: #99ac95;
+  --color-bg: #21232f;
+  --color-text: #c1c5d9;
+  --color-brown: #c1c5d9;
+  --color-blue: #ffffff;
+  --color-heading: #ffffff;
+  --color-text-muted: #c1c5d9;
+  --color-border: #c1c5d9;
 }
 
 *,
@@ -36,41 +41,12 @@ body {
   margin: 0;
   font-family: var(--font-mono);
   font-size: 16px;
+  font-weight: 400;
   line-height: 1.5;
   color: var(--color-text);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    to top,
-    color-mix(in srgb, var(--color-pink) 48%, transparent) 0%,
-    color-mix(in srgb, var(--color-pink) 20%, transparent) 32%,
-    color-mix(in srgb, var(--color-pink) 0%, transparent) 78%
-  );
-  background-repeat: no-repeat;
-  background-size: 100% 130%;
-  background-position: center 100%;
-  animation: pink-wash 16s ease-in-out infinite;
-}
-
-.dark body::before {
-  background: linear-gradient(
-    to top,
-    color-mix(in srgb, var(--color-pink) 36%, transparent) 0%,
-    color-mix(in srgb, var(--color-pink) 14%, transparent) 34%,
-    color-mix(in srgb, var(--color-pink) 0%, transparent) 78%
-  );
-  background-repeat: no-repeat;
-  background-size: 100% 130%;
-  background-position: center 100%;
 }
 
 #root {
@@ -79,24 +55,16 @@ body::before {
   min-height: 100svh;
 }
 
-@keyframes pink-wash {
-  0%,
-  100% {
-    background-position: center 100%;
-    opacity: 0.75;
-  }
-
-  50% {
-    background-position: center 70%;
-    opacity: 1;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body::before {
-    animation: none;
-    opacity: 0.9;
-  }
+body::after {
+  content: '';
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  height: var(--navbar-offset);
+  background-color: var(--color-bg);
+  pointer-events: none;
 }
 
 a {
@@ -113,8 +81,8 @@ button {
 }
 
 .main-content {
-  padding-top: var(--navbar-height);
-  min-height: calc(100svh - var(--navbar-height));
+  padding-top: calc(var(--navbar-height) + var(--navbar-offset));
+  min-height: calc(100svh - var(--navbar-height) - var(--navbar-offset));
 }
 
 .page-container {
@@ -125,13 +93,21 @@ button {
 
 .section-label {
   color: var(--color-text-muted);
-  font-size: 18px;
+  font-size: 24px;
+  font-weight: 400;
   margin: 0 0 16px;
+}
+
+.dark h1,
+.dark h2,
+.dark .section-label {
+  color: #ffffff;
 }
 
 @media (max-width: 768px) {
   :root {
     --page-padding-x: 24px;
+    --navbar-offset: 28px;
     --navbar-height: 72px;
   }
 

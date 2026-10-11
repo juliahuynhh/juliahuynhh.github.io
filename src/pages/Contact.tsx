@@ -1,7 +1,9 @@
-import { FormEvent, useState } from 'react'
+import { useState, type FormEvent } from 'react'
 import './Contact.css'
 
 const CONTACT_EMAIL = 'juliamaihuynh@utexas.edu'
+const LINKEDIN_URL = 'https://www.linkedin.com/in/julia-huynh-5117b8273/'
+const LINKEDIN_LABEL = 'linkedin.com/in/julia-huynh'
 const FORMSUBMIT_URL = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`
 
 type FormStatus = 'idle' | 'sending' | 'success' | 'error'
@@ -90,7 +92,7 @@ export default function Contact() {
         />
 
         <button className="contact-submit" type="submit" disabled={status === 'sending'}>
-          {status === 'sending' ? 'sending...' : 'send'}
+          {status === 'sending' ? 'sending...' : 'send | message >'}
         </button>
 
         <p className="contact-status" role="status" aria-live="polite">
@@ -101,22 +103,34 @@ export default function Contact() {
         </p>
       </form>
 
-      <p className="contact-line">
-        <span>
-          or email me at{' '}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="contact-link">
-            {CONTACT_EMAIL}
-          </a>
-        </span>
-        <a
-          href="https://www.linkedin.com/in/juliamaihuynh"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="contact-link"
-        >
-          contact me on linkedin!
-        </a>
-      </p>
+      <section className="contact-socials" aria-labelledby="socials-heading">
+        <h2 id="socials-heading" className="contact-socials-heading">
+          | Socials &gt;
+        </h2>
+        <ul className="contact-socials-list">
+          <li>
+            <span className="contact-socials-bullet" aria-hidden="true">
+              ⟡
+            </span>
+            <a href={`mailto:${CONTACT_EMAIL}`} className="contact-link">
+              {CONTACT_EMAIL}
+            </a>
+          </li>
+          <li>
+            <span className="contact-socials-bullet" aria-hidden="true">
+              ⟡
+            </span>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
+              {LINKEDIN_LABEL}
+            </a>
+          </li>
+        </ul>
+      </section>
     </div>
   )
 }

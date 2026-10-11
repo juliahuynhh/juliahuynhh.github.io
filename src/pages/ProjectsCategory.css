@@ -1,52 +1,82 @@
 .projects-page {
-  padding-top: 32px;
+  padding-top: 24px;
+  padding-bottom: var(--navbar-offset);
 }
 
-.projects-folders-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px 36px;
-  max-width: 860px;
-  margin: 0 auto;
+.topics-line {
+  margin: 0;
+  color: var(--color-blue);
+  font-size: 21.3px;
+  font-weight: 400;
+  line-height: 1.6;
+  white-space: nowrap;
 }
 
-.project-notes-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 240px));
-  justify-content: center;
-  gap: 48px;
-  margin-top: 24px;
+.topic-link,
+.topic-link:hover {
+  color: var(--color-blue);
 }
 
-.projects-back-link {
-  display: inline-block;
-  margin-top: 40px;
-  font-size: 14px;
-  color: var(--color-green);
+.topic-link.active,
+.topic-link.active:hover {
+  color: var(--color-pink);
 }
 
-.projects-back-link:hover {
-  text-decoration: underline;
+.projects-heading {
+  margin: 56px 0 32px;
+  color: var(--color-blue);
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.projects-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.projects-item {
+  margin-bottom: 28px;
+}
+
+.projects-item-link {
+  color: inherit;
+}
+
+.projects-item:last-child {
+  margin-bottom: 0;
+}
+
+.projects-item-title {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0;
+  color: var(--color-blue);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.projects-diamond {
+  flex-shrink: 0;
+  font-size: 16px;
+}
+
+.projects-item-summary {
+  margin: 6px 0 0 28px;
+  color: var(--color-brown);
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 768px) {
-  .projects-folders-grid {
-    grid-template-columns: 1fr;
-    max-width: 320px;
-    gap: 20px;
+  .projects-page {
+    padding-top: 16px;
   }
 
-  .project-notes-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-notes-grid {
-    grid-template-columns: 1fr;
-    max-width: 220px;
-    margin-left: auto;
-    margin-right: auto;
+  .topics-line {
+    font-size: 16px;
+    white-space: normal;
   }
 }

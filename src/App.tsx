@@ -1,7 +1,6 @@
-import { Routes, Route } from 'react-router-dom'
+import { Navigate, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
-import About from './pages/About'
 import Contact from './pages/Contact'
 import ProjectsCategory, { ProjectsIndex } from './pages/ProjectsCategory'
 import ProjectDetail from './pages/ProjectDetail'
@@ -13,7 +12,7 @@ export default function App() {
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<Navigate to="/" replace />} />
           <Route path="/projects" element={<ProjectsIndex />} />
           <Route path="/projects/:categoryId" element={<ProjectsCategory />} />
           <Route

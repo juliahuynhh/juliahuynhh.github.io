@@ -10,7 +10,7 @@
 }
 
 .dark .contact-heading {
-  color: var(--color-text);
+  color: #ffffff;
 }
 
 .contact-form {
@@ -74,7 +74,7 @@
 .contact-submit {
   align-self: flex-start;
   font-size: 16px;
-  color: var(--color-green);
+  color: var(--color-blue);
 }
 
 .contact-submit:hover:not(:disabled) {
@@ -97,26 +97,36 @@
   color: var(--color-text);
 }
 
-.contact-line {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 8px 32px;
-  margin: 0;
-  font-size: 16px;
-  color: var(--color-brown);
+.contact-socials-heading {
+  margin: 0 0 18px;
+  color: var(--color-blue);
+  font-size: 24px;
+  font-weight: 400;
 }
 
-.dark .contact-line {
-  color: var(--color-text);
+.contact-socials-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-socials-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: var(--color-brown);
+  font-size: 16px;
+}
+
+.contact-socials-bullet {
+  flex-shrink: 0;
 }
 
 .contact-link {
   color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 .contact-link:hover {
-  color: var(--color-green);
+  color: var(--color-blue);
 }

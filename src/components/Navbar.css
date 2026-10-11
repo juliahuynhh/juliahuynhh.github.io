@@ -4,15 +4,16 @@
   left: 0;
   right: 0;
   z-index: 100;
-  height: var(--navbar-height);
+  height: calc(var(--navbar-height) + var(--navbar-offset));
+  padding-top: var(--navbar-offset);
   background-color: var(--color-bg);
   border-bottom: 1px solid transparent;
 }
 
 .navbar-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   max-width: var(--page-max-width);
   height: 100%;
   margin: 0 auto;
@@ -23,7 +24,26 @@
 .navbar-theme-toggle {
   display: flex;
   align-items: center;
+  gap: 10px;
   flex-shrink: 0;
+  color: var(--color-text);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  caret-color: transparent;
+  user-select: none;
+}
+
+.navbar-home {
+  justify-self: start;
+}
+
+.navbar-theme-toggle {
+  justify-self: end;
+}
+
+.navbar-bracket {
+  color: var(--color-text);
 }
 
 .navbar-home:hover,
@@ -34,10 +54,12 @@
 .navbar-icon {
   display: block;
   width: auto;
+  pointer-events: none;
+  user-select: none;
 }
 
 .navbar-icon-clover {
-  height: 52px;
+  height: 44px;
 }
 
 .navbar-icon-sun,
@@ -52,22 +74,58 @@
 }
 
 .navbar-link {
-  font-size: 22px;
-  color: var(--color-text);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--color-blue);
+  caret-color: transparent;
+  cursor: pointer;
   transition: color 0.2s;
 }
 
+.navbar-link:focus {
+  outline: none;
+}
+
+.navbar-link:focus-visible {
+  outline: 2px solid var(--color-pink);
+  outline-offset: 4px;
+}
+
 .navbar-link:hover {
-  color: var(--color-green);
+  color: var(--color-blue);
 }
 
 .navbar-link.active {
   color: var(--color-pink);
 }
 
+.dark .navbar-home,
+.dark .navbar-theme-toggle,
+.dark .navbar-bracket,
+.dark .navbar-link,
+.dark .navbar-link:hover {
+  color: #ffffff;
+}
+
+.dark .navbar-link.active,
+.dark .navbar-link.active:hover {
+  color: var(--color-pink);
+}
+
 @media (max-width: 768px) {
+  .navbar-inner {
+    padding: 0 16px;
+    column-gap: 8px;
+  }
+
+  .navbar-home,
+  .navbar-theme-toggle {
+    gap: 6px;
+    font-size: 18px;
+  }
+
   .navbar-links {
-    gap: 28px;
+    gap: 14px;
   }
 
   .navbar-link {
@@ -75,7 +133,7 @@
   }
 
   .navbar-icon-clover {
-    height: 40px;
+    height: 32px;
   }
 
   .navbar-icon-sun,
@@ -86,10 +144,16 @@
 
 @media (max-width: 480px) {
   .navbar-links {
-    gap: 18px;
+    gap: 10px;
   }
 
   .navbar-link {
     font-size: 14px;
+  }
+
+  .navbar-home,
+  .navbar-theme-toggle {
+    gap: 4px;
+    font-size: 16px;
   }
 }
