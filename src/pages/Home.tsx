@@ -19,7 +19,7 @@ const featuredProjects = [
   {
     title: 'QBasic - A simple quantum programming language',
     summary:
-      'Quantum programming language that allows for basic single and multi-qubit operations on quantum circuits and simulation with visualizations',
+      'Quantum programming language that allows for basic quantum circuit preparation and simulation',
   },
   {
     title: 'Quantum Random Walk Graph Algorithm',

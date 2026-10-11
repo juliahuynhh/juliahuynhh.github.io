@@ -16,15 +16,15 @@ export type ProjectCategory = {
 }
 
 const longSummary =
-  'short summary of the project in 1/2 lines. bflegosgvna ifhosifnsa g fisoffdslfnsdnjnosdfnidsifnfoisfnodfniddsfninofifuonfinfidfnsofnadfnonminsdfnsdfndifdfnfdndinidi fnsdifnosbdsuafsfnbsbdsuibfeh'
+  'Short summary in progress'
 
 const shortSummary =
-  'short summary of the project in 1/2 lines. bflegosgvna ifhosifnsa g fisoffdslfnsdnjnosdfnidsifnfoisfnodfniddsfninofifuonfinfidfnsofnad'
+  'Short summary in progress'
 
 const projectBlurb =
-  '[insert project description insert project description insert project description]'
+  '[project description in progress]'
 
-const projectBody = 'insert project description '.repeat(42).trim()
+const projectBody = 'project description in progress'.trim()
 
 const folderImages = {
   left: '/icons/folder-left.png',
@@ -43,7 +43,7 @@ export const projectCategories: ProjectCategory[] = [
         name: 'QBasic',
         title: 'QBasic - a simple quantum programming language',
         date: '',
-        summary: longSummary,
+        summary: 'Quantum programming language that allows for basic quantum circuit preparation and simulation',
         blurb: projectBlurb,
         body: projectBody,
       },
@@ -52,7 +52,7 @@ export const projectCategories: ProjectCategory[] = [
         name: 'Quantum Random Walk',
         title: 'Quantum Random Walk Graph Algorithm',
         date: '',
-        summary: shortSummary,
+        summary: 'Purely Python implementation using NumPy of a graph search algorithm based off quantum random walks on a 1D ring of nodes',
         blurb: projectBlurb,
         body: projectBody,
       },
@@ -61,7 +61,7 @@ export const projectCategories: ProjectCategory[] = [
         name: 'Q-Volution',
         title: 'Q-Volution Quantum Harmonic Oscillator Algorithm (5th Place Honorable Mention)',
         date: '',
-        summary: longSummary,
+        summary: 'Implementation of the Tao Xin (2020) algorithm for solving linear differential equations to simulate quantum harmonic oscillator energy',
         blurb: projectBlurb,
         body: projectBody,
       },
@@ -71,7 +71,7 @@ export const projectCategories: ProjectCategory[] = [
         title:
           'Quantum Approximation Optimization Algorithm for Solving Weighted & Unweighted MaxCut',
         date: '',
-        summary: shortSummary,
+        summary: 'Pure Python implementation of the QAOA algorithm for solving the weighted & unweighted MaxCut problem with visualizations',
         blurb: projectBlurb,
         body: projectBody,
       },
@@ -81,7 +81,35 @@ export const projectCategories: ProjectCategory[] = [
     id: 'physics',
     label: 'Physics',
     image: folderImages.center,
-    projects: [],
+    projects: [
+      {
+        slug: 'interferometry',
+        name: 'Interferometry',
+        title: 'Interferometry-Based Pressure Sensor for Rocket Engine Simulations (Markert Lab)',
+        date: '',
+        summary: 'A fast interferometry-based pressure sensor for sensitive measurements of an oscillating thin metal, with applications for measuring soundwaves in rocket engines ',
+        blurb: projectBlurb,
+        body: projectBody,
+      },
+      {
+        slug: 'superconductor',
+        name: 'Superconductor',
+        title: 'Handmade SuperConducting (YBa2Cu3O7) Sample (Markert Lab)',
+        date: '',
+        summary: 'A fast interferometry-based pressure sensor for sensitive measurements of an oscillating thin metal, with applications for measuring soundwaves in rocket engines ',
+        blurb: projectBlurb,
+        body: projectBody,
+      },
+      {
+        slug: 'pet scanner',
+        name: 'pet scanner',
+        title: 'Positron Emission Tomography (PET) Coldbox (Lang Lab)',
+        date: '',
+        summary: 'Engineered a dark coldbox to isolate PET experiments from temperature & light noise, enhancing result quality',
+        blurb: projectBlurb,
+        body: projectBody,
+      },
+    ],
   },
   {
     id: 'computer-science',
