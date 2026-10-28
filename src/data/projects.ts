@@ -91,7 +91,7 @@ export const projectCategories: ProjectCategory[] = [
         name: 'Superconductor',
         title: 'Handmade SuperConducting (YBa2Cu3O7) Sample (Markert Lab)',
         date: 'March - April 2025',
-        summary: 'Engineered a dark coldbox to isolate PET experiments from temperature & light noise, enhancing result quality',
+        summary: 'Wet-Lab synthesized my own superconducting sample',
         blurb: projectBlurb,
         body: projectBody,
       },
@@ -116,7 +116,17 @@ export const projectCategories: ProjectCategory[] = [
     id: 'misc',
     label: 'Misc.',
     image: folderImages.left,
-    projects: [],
+    projects: [
+      {
+        slug: 'reading-list',
+        name: 'Reading List',
+        title: 'Reading List',
+        date: 'Ongoing',
+        summary: "A personal review and reflection of books I've read recently (started October 2026)",
+        blurb: "A personal review and reflection of books I've read recently - started October 2026",
+        body: '"Tuesdays with Morrie" by Mitch Albom (October 2026)',
+      },
+    ],
   },
 ]
 

@@ -47,6 +47,37 @@
   line-height: 1.7;
 }
 
+.home-current-read-block {
+  max-width: 740px;
+  margin: 24px 0 0;
+}
+
+.home-current-read {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0;
+  color: var(--color-brown);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.home-current-read-summary {
+  margin: 6px 0 0 28px;
+  color: var(--color-brown);
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.home-current-read-link {
+  color: var(--color-blue);
+}
+
+.home-current-read-link:hover {
+  color: var(--color-pink);
+}
+
 .home-intro-lead {
   display: block;
 }
@@ -127,10 +158,20 @@
 }
 
 .dark .home-intro,
+.dark .home-current-read,
+.dark .home-current-read-summary,
 .dark .home-experience-item,
 .dark .home-project-title,
 .dark .home-project-summary {
   color: var(--color-text);
+}
+
+.dark .home-current-read-link {
+  color: #ffffff;
+}
+
+.dark .home-current-read-link:hover {
+  color: var(--color-pink);
 }
 
 @media (max-width: 768px) {

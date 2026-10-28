@@ -1,4 +1,11 @@
+import { Link } from 'react-router-dom'
 import './Home.css'
+
+const currentRead = {
+  title: '"Tuesdays with Morrie" by Mitch Albom',
+  href: '/projects/misc/reading-list',
+  summary: "Mitch Albom's memoir about his conversations on the meaning of life with his former sociology professor who's dying.",
+}
 
 const experiences = [
   {
@@ -51,8 +58,23 @@ export default function Home() {
         </span>{' '}
         My interests are in quantum software (compilers, programming languages,
         quantum machine learning, etc.). Outside of school, I’m trying out new
-        cafes, baking, or listening to a podcast.
+        cafes, baking, or reading a book.
       </p>
+
+      <div className="home-current-read-block">
+        <p className="home-current-read">
+          <span className="home-diamond" aria-hidden="true">
+            ⟡
+          </span>
+          <span>
+            Current Read:{' '}
+            <Link to={currentRead.href} className="home-current-read-link">
+              {currentRead.title}
+            </Link>
+          </span>
+        </p>
+        <p className="home-current-read-summary">{currentRead.summary}</p>
+      </div>
       </div>
 
       <section className="home-section" aria-labelledby="experience-heading">
